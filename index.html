@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KBC</title>
+  </head>
+  <body>
+    <h1>Welcome to KBC</h1>
+    <script>
+      var kbc = {
+        questions: [
+          "1.  Which of the following gods is also known as ‘Gauri Nandan’?",
+          "2.In the game of ludo the discs or tokens are of how many colours?",
+          "3.Where was the BRICS summit held in 2014?",
+          "4.Which of these terms can only be used for women?"
+          
+        ],
+        options: [
+          "A-> Agni B-> Indra C-> Hanuman D->Ganesha",
+          "A-> one  B-> Two C-> Three D-> Four",
+          "A-> Brazil B->India C->Russia  D-> China",
+          "A-> Dirghaayu B-> Suhagan C-> Chiranjeevi D->Sushil",
+         
+        ],
+        answers: [
+          "Ganesha",
+          "Four",
+          "Brazil",
+          "Suhagan"
+         
+        ],
+        correct_options: ["A", "D", "A", "B"],
+        winning_prize: [
+          "One Thousand",
+          "Fifty Thouusand",
+          "Ten Lakhs",
+          "Sixty Lakhs"
+         
+        ],
+
+        Enter_the_game: function () {
+          var enter = prompt("Are you ready for the KBC game: Yes/No")
+          if(enter == "Yes"){ 
+          for (var i = 0; i < this.questions.length; i++) {
+            console.log(this.questions[i]);
+            console.log(this.options[i]);
+            var correct_Option = prompt("Enter the Correct Option");
+            let Option = correct_Option.toUpperCase();
+            if (Option == this.correct_options[i]) {
+              console.log(
+                "Congratulations you Have Won " +
+                  this.winning_prize[i] +
+                  " Indian Rupees"
+              );
+            } else {
+              console.log(
+                "Well try Better Luck Next Time! correct Answer is " +
+                  this.correct_options[i] +
+                  ":" +
+                  this.answers[i]
+              );
+              if (i >= 2) {
+                console.log(
+                  "Your Winning Amount is Fifty Thousand Indian Rupees"
+                );
+              } else {
+                console.log("Sorry to say this! Your Winning Amount is Zero!");
+              }
+              break;
+            }
+          }
+        }else{
+      console.log("Try when you are ready");
+    }
+        },
+      };
+      
+    
+    kbc.Enter_the_game();
+    </script>
+  </body>
+</html>
